@@ -266,7 +266,7 @@ document.getElementById("contactForm").addEventListener("submit",function(e){
   const msg=document.getElementById("msg").value.trim();
   if(!name||!email||!msg){alert("Please fill all fields");return;}
   const message=`Hi, I want to contact DVI.\nName: ${name}\nEmail: ${email}\nMessage: ${msg}`;
-  const url=`https://wa.me/9182193376?text=${encodeURIComponent(message)}`;
+  const url=`https://wa.me/919182193376?text=${encodeURIComponent(message)}`;
   window.open(url,"_blank");
   this.reset();
 });
