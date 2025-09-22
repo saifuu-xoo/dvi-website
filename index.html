@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Vision Institute</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#1a73e8;
+  --secondary:#1760c6;
+  --dark:#111827;
+  --light:#f9f9f9;
+  --muted:#6b7280;
+  --accent:#e8f0fe;
+  --card:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;color:var(--dark);background:var(--light);line-height:1.6;}
+.container{max-width:1200px;margin:auto;padding:20px;}
+
+/* HEADER */
+header{
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:50;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  padding:10px 0;
+}
+header .header-flex{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:12px 20px;}
+header img{height:80px;width:80px;margin-right:15px;}
+header h1{font-size:24px;color:var(--primary);}
+nav ul{display:flex;list-style:none;gap:18px;flex-wrap:wrap;}
+nav a{color:var(--dark);text-decoration:none;font-weight:600;transition:0.3s;}
+nav a:hover{color:var(--primary);}
+
+/* HERO */
+.hero{display:flex;flex-wrap:wrap;align-items:center;gap:20px;background:var(--accent);padding:60px 20px;border-radius:12px;margin-top:20px;}
+.hero-text{flex:1;min-width:280px;opacity:0; transform:translateY(20px); transition:all 0.8s ease;}
+.hero-text h1{font-size:36px;margin-bottom:12px;}
+.hero-text p{font-size:18px;margin-bottom:20px;color:var(--muted);}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;transition:all 0.3s;margin-right:10px;}
+.btn.primary{background:var(--primary);color:#fff;}
+.btn.primary:hover{background:var(--secondary);}
+.btn.secondary{border:2px solid var(--primary);color:var(--primary);}
+.btn.secondary:hover{background:var(--primary);color:#fff;}
+.hero-img{flex:1;text-align:center;opacity:0; transform:translateY(20px); transition:all 0.8s ease;}
+.hero-img img{width:100%;height:auto;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+
+/* ABOUT ME */
+.about-grid{display:flex;flex-wrap:wrap;gap:30px;align-items:center;margin-top:60px;opacity:0; transform:translateY(20px); transition:all 0.8s ease;}
+.about-text{flex:1;min-width:280px;}
+.about-img{flex:1;min-width:280px;}
+.about-img img{width:100%;border-radius:12px;}
+.about-text h2{margin-bottom:16px;font-size:28px;}
+.about-text ul{list-style:none;margin-top:12px;}
+.about-text ul li{margin-bottom:8px;color:var(--dark);}
+
+/* COURSES */
+.courses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px;opacity:0; transform:translateY(20px); transition:all 0.8s ease;}
+.course-card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.06);display:flex;flex-direction:column;transition:transform 0.3s;}
+.course-card:hover{transform:translateY(-6px);}
+.course-card img{width:100%;height:160px;object-fit:cover;}
+.course-card h3{margin:12px;font-size:20px;}
+.course-card p{margin:0 12px 12px;color:var(--muted);}
+.course-card .btn-enroll{margin:12px;text-align:center;padding:10px;background:var(--primary);color:#fff;border-radius:6px;font-weight:600;text-decoration:none;transition:0.3s;}
+.course-card .btn-enroll:hover{background:var(--secondary);}
+
+/* TESTIMONIALS */
+.testimonials-grid{display:grid;gap:20px;margin-top:30px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));opacity:0; transform:translateY(20px); transition:all 0.8s ease;}
+.testimonial{background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+.testimonial p{font-style:italic;}
+.testimonial h4{margin-top:10px;color:var(--primary);}
+
+/* CONTACT */
+.contact-grid{display:flex;flex-wrap:wrap;gap:30px;align-items:start;margin-top:60px;opacity:0; transform:translateY(20px); transition:all 0.8s ease;}
+.contact-left{flex:1;min-width:280px;}
+.contact-right{flex:1;min-width:280px;}
+.contact-right form{display:flex;flex-direction:column;gap:12px;}
+input,textarea{padding:12px;border-radius:6px;border:1px solid #ddd;width:100%;}
+
+/* FOOTER */
+footer{background:var(--dark);color:#fff;padding:20px 0;text-align:center; margin-top:40px;}
+footer p{margin:4px 0;}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .about-grid,.contact-grid,.hero{flex-direction:column;}
+  nav ul{justify-content:center;}
+}
+@media(max-width:576px){
+  .hero-text h1{font-size:28px;}
+  .hero-text p{font-size:16px;}
+  header img{height:60px;width:60px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+<div class="container header-flex">
+  <div class="logo">
+    <img src="images/logo.png" alt="DVI Logo">
+    <h1>Data Vision Institute</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#aboutme">About Me</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+
+<!-- HERO -->
+<section id="hero" class="hero container">
+  <div class="hero-text">
+    <h1>Welcome to Data Vision Institute</h1>
+    <p>Practical Training in Excel, SQL, Power BI, Python, Data Science & AI</p>
+    <a href="https://wa.me/9182193376?text=Hi, I want to register at DVI." class="btn primary">Register on WhatsApp</a>
+    <a href="#courses" class="btn secondary">View Courses</a>
+  </div>
+  <div class="hero-img">
+    <img src="images/hero.jpg" alt="Students Learning">
+  </div>
+</section>
+
+<!-- ABOUT ME -->
+<section id="aboutme" class="section container">
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>Hi! I’m <b>Saif Khan</b>, founder of Data Vision Institute (DVI). I teach students practical skills in Excel, SQL, Power BI, Python, Data Science, AI, and Prompt Engineering. My mission is to make students job-ready with real-world projects, interactive learning, and certification.</p>
+      <ul>
+        <li>✔ Experienced & Supportive Instructor</li>
+        <li>✔ Practical, Industry-Oriented Training</li>
+        <li>✔ Real Projects & Career Guidance</li>
+      </ul>
+    </div>
+    <div class="about-img">
+      <img src="images/classroom.jpg" alt="Classroom">
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses" class="section container">
+  <h2>Courses We Offer</h2>
+  <div class="courses-grid">
+    <div class="course-card">
+      <img src="images/excel.png" alt="Excel">
+      <h3>Microsoft Excel</h3>
+      <p>Practical Excel for analysis, formulas, pivot tables & automation.</p>
+      <a href="https://wa.me/9182193376?text=Hi, I want to enroll in Microsoft Excel." class="btn-enroll">Enroll Now</a>
+    </div>
+    <div class="course-card">
+      <img src="images/sql.png" alt="SQL">
+      <h3>SQL & Database</h3>
+      <p>SQL for real databases, queries, joins, indexing & project work.</p>
+      <a href="https://wa.me/9182193376?text=Hi, I want to enroll in SQL & Database." class="btn-enroll">Enroll Now</a>
+    </div>
+    <div class="course-card">
+      <img src="images/powerbi.png" alt="Power BI">
+      <h3>Power BI</h3>
+      <p>Dashboarding, DAX basics, real dashboards & storytelling with data.</p>
+      <a href="https://wa.me/9182193376?text=Hi, I want to enroll in Power BI." class="btn-enroll">Enroll Now</a>
+    </div>
+    <div class="course-card">
+      <img src="images/python.png" alt="Python">
+      <h3>Python Programming</h3>
+      <p>Beginner → Pro: Python fundamentals, libraries for data analysis.</p>
+      <a href="https://wa.me/9182193376?text=Hi, I want to enroll in Python Programming." class="btn-enroll">Enroll Now</a>
+    </div>
+    <div class="course-card">
+      <img src="images/datascience.png" alt="Data Science">
+      <h3>Data Science</h3>
+      <p>Learn Data Analysis, Machine Learning & real-world projects.</p>
+      <a href="https://wa.me/9182193376?text=Hi, I want to enroll in Data Science." class="btn-enroll">Enroll Now</a>
+    </div>
+    <div class="course-card">
+      <img src="images/ai.png" alt="Artificial Intelligence">
+      <h3>Artificial Intelligence</h3>
+      <p>AI concepts, ML, Deep Learning, Neural Networks & projects.</p>
+      <a href="https://wa.me/9182193376?text=Hi, I want to enroll in Artificial Intelligence." class="btn-enroll">Enroll Now</a>
+    </div>
+    <div class="course-card">
+      <img src="images/prompt.png" alt="Prompt Engineering">
+      <h3>Prompt Engineering</h3>
+      <p>Master AI prompts, ChatGPT, and tools for practical applications.</p>
+      <a href="https://wa.me/9182193376?text=Hi, I want to enroll in Prompt Engineering." class="btn-enroll">Enroll Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="section container">
+  <h2>What Our Students Say</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <p>"DVI helped me get my first job with strong Excel and SQL skills!"</p>
+      <h4>- Rizwan Siddique</h4>
+    </div>
+    <div class="testimonial">
+      <p>"The best institute for Data Science & Analytics in Hyderabad!"</p>
+      <h4>- Mohd Faizan</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Practical learning, supportive teachers, and real projects."</p>
+      <h4>- Syed Wiqar Ali</h4>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section container">
+  <h2>Contact Me</h2>
+  <div class="contact-grid">
+    <div class="contact-left">
+      <p>📍 Shahalibanda, Zohra Colony, Hyderabad</p>
+      <p>📞 +91 821933376</p>
+      <p>📧 saifkhan76444@gmail.com</p>
+    </div>
+    <div class="contact-right">
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="msg" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© <span id="year"></span> Data Vision Institute. All rights reserved.</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+// Year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Fade-in sections on scroll
+const fadeElems=document.querySelectorAll('.hero-text,.hero-img,.about-grid,.courses-grid,.testimonials-grid,.contact-grid');
+window.addEventListener('scroll',()=>{
+  const trigger=window.innerHeight/5*4;
+  fadeElems.forEach(f=>{
+    if(f.getBoundingClientRect().top<trigger){
+      f.style.opacity='1';
+      f.style.transform='translateY(0)';
+    }
+  });
+});
+
+// Contact Form WhatsApp
+document.getElementById("contactForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  const name=document.getElementById("name").value.trim();
+  const email=document.getElementById("email").value.trim();
+  const msg=document.getElementById("msg").value.trim();
+  if(!name||!email||!msg){alert("Please fill all fields");return;}
+  const message=`Hi, I want to contact DVI.\nName: ${name}\nEmail: ${email}\nMessage: ${msg}`;
+  const url=`https://wa.me/9182193376?text=${encodeURIComponent(message)}`;
+  window.open(url,"_blank");
+  this.reset();
+});
+</script>
+
+</body>
+</html>
